@@ -1,0 +1,50 @@
+FOLLOW THE BELOW STEPS PROPERLY.
+
+Are there any recent changes made on the computer before the issue started?
+
+Kindly follow the steps below and check if it will resolve the issue
+
+Run a system file checker to verify the integrity of windows system files on your computer making sure that there are no corrupted files on your windows.
+
+Perform SFC Scan and Repair Windows Image
+-This process will perform scan for any corrupted system files or integrity violation and will attempt to repair it along with the Windows Image.
+
+1. Open command prompt with administrator access
+2. Type each command below and wait until scan is completed.
+
+SFC /scannow
+DISM /Online /Cleanup-Image /CheckHealth
+DISM /Online /Cleanup-Image /ScanHealth
+DISM /Online /Cleanup-Image /RestoreHealth
+
+Quick note: While the command is running, it's expected to see the process stuck at 20 or 40 percent. After a few minutes, the process will complete successfully.
+
+Once you complete the steps, the Deployment Image Servicing and Management tool will connect to the Windows Update servers to download and replace any damaged files in the local image for Windows 10 as necessary.
+
+3. Close the command prompt.
+
+After the scan completes, kindly check for available updates on your computer
+
+Press windows key + I
+Click on Updates and Security
+Click on Check for Updates
+Wait until windows fetches all available updates and install them on your computer.
+
+After the updates completes, restart the computer for the changes to take effect.
+
+After restart, kindly perform cleanboot on your computer
+
+Perform Clean Boot
+- This process will eliminate 3rd party application running in the background of your computer along with services that are not needed to run windows. If there's any conflicting 3rd party application that causes the issue on your computer, this process will stop it.
+
+1. Open the run box by pressing the Windows Key + R and type msconfig
+2. System Configuration Utility box will open and by default you are on general tab.
+3. On the General tab, click the selective startup and make sure that load system service and load startup items both have checked mark.
+4. Click on services tab
+5. Put a check mark on Hide All Microsoft Services > This is a very important part as if you miss to click on this, computer might not boot properly or permanently and will end up on clean installation.
+6. Once Hide all Microsoft Services have checked mark on it, click on Disable All
+7. Click on the Startup Tab and click open task manager. This will open another window which contains all your startup applications on the administrator account.
+8. Disable all application that you're not using. You can simply just click on them and select disable.
+9. Click OK , Apply and close the configuration utility
+
+Restart the computer again and check if the same issue appears
